@@ -25,7 +25,7 @@ public class ConvidadoController {
 
     @PostMapping("/cadastrar")
     public ResponseEntity<?> cadastrarConvidado(@RequestBody Convidado convidado) {
-        if (convidado == null || convidado.getEvento() == null) {
+        if (convidado == null || convidado.getEvento() == null || convidado.getEvento().getIdEvento() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Dados inválidos.");
         }
 
